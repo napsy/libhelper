@@ -1,5 +1,5 @@
 CC=clang
-CFLAGS=-c -Wall
+CFLAGS=-c -Wall -Werror
 LDFLAGS=
 SOURCES= tests.c \
          list.c \

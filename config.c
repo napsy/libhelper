@@ -144,17 +144,17 @@ void _config_test()
 
     val = map_get(config, "restore_defaults");
     assert(val != NULL);
-    if (strcmp(val, "true") != 0) {
-        fprintf(stderr, "%s: '%s' != '%s'\n", __func__, val, "true");
+    if (strcmp(val, "    true") != 0) {
+        fprintf(stderr, "%s: '%s' != '%s'\n", __func__, val, "    true");
         abort();
     }
     val = map_get(config, "help_visible");
     assert(val != NULL);
-    if (strcmp(val, "0") != 0) {
-        fprintf(stderr, "%s: '%s' != '%s'\n", __func__, val, "0");
+    if (strcmp(val, " 0") != 0) {
+        fprintf(stderr, "%s: '%s' != '%s'\n", __func__, val, " 0");
         abort();
     }
     config_free(config);
-
+    fprintf(stderr, "%s: all tests passed\n", __func__);
 #endif
 }
