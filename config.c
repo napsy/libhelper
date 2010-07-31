@@ -62,8 +62,8 @@ int _config_read_next(FILE *in, char *value1, char *value2)
             case '=':
                 value1[idx] = 0;
                 is_value = 1;
-                skip_whitespace = 0;
-                idx = 0;
+                skip_whitespace = 1; /* Set to 0 if you don't want to skip  */
+                idx = 0;             /* whitespaces in value. */
                 break;
             case '\n':
             case '\r':
@@ -99,6 +99,7 @@ struct _map *config_read(const char *filename)
 
    
     while (!feof(in)) {
+        /* TODO: limit key and value lenght. */
         key = malloc(128);
         if (errno == ENOMEM)
             return NULL;
@@ -144,14 +145,14 @@ void _config_test()
 
     val = map_get(config, "restore_defaults");
     assert(val != NULL);
-    if (strcmp(val, "    true") != 0) {
-        fprintf(stderr, "%s: '%s' != '%s'\n", __func__, val, "    true");
+    if (strcmp(val, "true") != 0) {
+        fprintf(stderr, "%s: '%s' != '%s'\n", __func__, val, "true");
         abort();
     }
     val = map_get(config, "help_visible");
     assert(val != NULL);
-    if (strcmp(val, " 0") != 0) {
-        fprintf(stderr, "%s: '%s' != '%s'\n", __func__, val, " 0");
+    if (strcmp(val, "0") != 0) {
+        fprintf(stderr, "%s: '%s' != '%s'\n", __func__, val, "0");
         abort();
     }
     config_free(config);

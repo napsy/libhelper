@@ -136,7 +136,8 @@ void map_clear(struct _map *map)
 
 void _map_resize(struct _map *map)
 {
-    fprintf(stderr, "TODO: %s\n", __func__);
+    /* Increase the bucket numbers and rehash the entire map. */
+    fprintf(stderr, "%s: TODO\n", __func__);
 }
 
 void map_free(struct _map *map)

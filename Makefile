@@ -4,7 +4,8 @@ LDFLAGS=
 SOURCES= tests.c \
          list.c \
          map.c \
-         config.c
+         config.c \
+         sys/object.c
 OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=tests
 
