@@ -1,0 +1,5 @@
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_C_COMPILER "clang")
+set(CMAKE_C_FLAGS "-O3")
+set(libhelper_SOURCES tests.c config.c list.c map.c)
+add_executable(tests ${libhelper_SOURCES})
