@@ -1,3 +1,13 @@
 libhelper
 ============
 Common algorithms and data structures for the C programming language.
+
+You need cmake in orderder to build this project:
+
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
+$ make test
+
+and you're done.
