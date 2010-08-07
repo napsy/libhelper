@@ -2,6 +2,18 @@ libhelper
 ============
 Common algorithms and data structures for the C programming language.
 
+Available:
+ - doubly linked list
+ - string hash map
+ - reader for configuration files
+
+In works:
+ - translation API
+ - simple memory pool
+ - simple reference counted objects
+
+Compilation
+-------------------
 You need cmake in orderder to build this project:
 
 $ mkdir build
