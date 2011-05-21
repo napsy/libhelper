@@ -1,5 +1,5 @@
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(libhelper_SOURCES config.c list.c map.c)
+set(libhelper_SOURCES config.c list.c map.c pool.c addrwatch.c)
 set(libhelper_TEST_SOURCES tests.c ${libhelper_SOURCES})
 add_executable(tests ${libhelper_TEST_SOURCES})
 ADD_TEST(test ${EXECUTABLE_OUTPUT_PATH}/tests)   
